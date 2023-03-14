@@ -12,7 +12,7 @@
         <ul>
             <li v-for="system in systems">{{ system }}</li>
         </ul>
-        <p v-show="flag">두잇 Vue.js</p> // flag의 내용이 들어있다는 것을 확인하자~
+        <p v-show="flag">두잇 Vue.js </p>
         <h5 v-bind:id="uid">뷰 입문서 </h5>
         <button v-on:click="popupAlert">경고 창 버튼</button>
     </div>
@@ -24,11 +24,11 @@
             data: {
                 flag: true, // 분기 처리의 조건 값인 flag가 true다? 두잇 Vue.js 화면에 표시 ㄱ
                 systems: ['android', 'ios', 'window'], // systems는 뷰 데이터다. 이 배열 요소 갯수만큼 <li>태그 반복!
-                uid: 10
+                uid: 10 // HTML 태그의 id 속성을 뷰 데이터에 선언한 uid값과 연결하여 화면에 표시합니다.
                 },
                 methods: {
-                    popupAlert: function() {
-                        return alert('경고 창 표시');
+                    popupAlert: function() { //'경고창 버튼'을 클릭했을 때, 해당 이벤트를 감지하여 
+                        return alert('경고 창 표시'); //methods 속성에 선언한 popAlert() 메서드 수행 -> 브라우저 기본 경고창 오픈!
                     }
                 }
             });
