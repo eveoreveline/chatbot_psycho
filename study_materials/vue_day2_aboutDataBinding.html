@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+    </div>
+    
+    <script>
+        new Vue({
+            el: '#app',
+            data: { // Vue라는 지역 컴포넌트 > data 속성 > message 속성에 데이터를 "묶어준다" (=binding)
+                message: 'Hello Vue.js!' // message 값이 바뀌면 뷰의 반응성에 의해 화면이 자동 갱신된다.
+            }
+        });
+    </script>
+
+
+    <div id="app2" v-once> <!-- v-once 속성을 활용한 1회성 데이터 바인딩-->
+        {{ message_2 }}
+    </div>
+    <div id="app3">
+        <p v-bind:id="idA">아이디 바인딩</p>
+        <p v-bind:id="classA">클래스 바인딩</p>
+        <p v-bind:id="styleA">스타일 바인딩</p>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app3',
+            data: {
+                idA: 10,
+                classA: 'container',
+                styleA: 'color:blue'
+            }
+        })
+    </script>
+</body>
+</html>
