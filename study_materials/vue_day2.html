@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <a v-if="flag">두잇 Vue.js</a>
+        <ul>
+            <li v-for="system in systems">{{ system }}</li>
+        </ul>
+        <p v-show="flag">두잇 Vue.js</p> // flag의 내용이 들어있다는 것을 확인하자~
+        <h5 v-bind:id="uid">뷰 입문서 </h5>
+        <button v-on:click="popupAlert">경고 창 버튼</button>
+    </div>
+
+    <script src="https://파일주소"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                flag: true, // 분기 처리의 조건 값인 flag가 true다? 두잇 Vue.js 화면에 표시 ㄱ
+                systems: ['android', 'ios', 'window'], // systems는 뷰 데이터다. 이 배열 요소 갯수만큼 <li>태그 반복!
+                uid: 10
+                },
+                methods: {
+                    popupAlert: function() {
+                        return alert('경고 창 표시');
+                    }
+                }
+            });
+        </script>
+</body>
+</html>
