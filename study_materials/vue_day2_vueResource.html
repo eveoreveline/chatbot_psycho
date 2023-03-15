@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="getData">프레임워크 목록 가져오기</button>
+    </div>
+
+    <script src="파일주소"></script>
+    <script src="뷰 리소스 cdn"></script> <!--cdn이란? 컨텐츠 딜리버리 네트워크! -->
+    <script>
+        new Vue({
+            el: "#app"
+            methods: {
+                getData: function() {
+                    this.$http.get('요청문의할 사이트 주소')
+                }
+            }
+        })
+    </script>
+</body>
+</html>
