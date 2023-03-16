@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        export default {
+            data() {
+                return {
+                    text: ''
+                }
+            },
+            methods: {
+                onInput(e) {
+                    // native Dom event를 받는 v-on이다. 
+                    // root element의 event를 감지하게 하고 싶을 때 인자롤 받아 사용한다 (=바인딩)
+                    this.text = e.target.value
+                }
+            }
+        }
+    </script>
+    <template>
+        <input :value="text" @input="onInput" placeholder="Type here">
+        <p> {{ text }} </p>
+    </template>
+</body>
+</html>
