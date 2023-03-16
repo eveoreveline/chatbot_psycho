@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> <!--Event Listner인 v-on 디렉티브를 통해 DOM 이벤트에 접근할 수 있다-->
+    <script>
+        export default {
+            data() {
+                return {
+                    count: 0
+                }
+            },
+            methods: {
+                increment() { // increment라는 함수를 사용한 메서드로 이벤트를 설정
+                    this.count++ // this를 통해 메서드에 접근하고, 수행할 때 1씩 count한다
+                }
+            }
+        }
+    </script>
+    <template>
+    <button v-on:click="increment">{{ count }}</button> <!--button 태그에 클릭 이벤트에 대한 value 증가 인터랙션을 삽입하는 방법-->
+    <button @click="increment">{{ count }}</button> <!--v-on의 간소화된 문법-->
+    </template>
+</body>
+</html>

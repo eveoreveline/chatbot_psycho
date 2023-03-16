@@ -18,7 +18,7 @@
         </script>
         
         <template>
-            <h1 :class="titleClass">Make me red</h1>
+            <h1 :class="titleClass">Make me red</h1> <!--v-bind의 간략화된 문법인 콜론을 활용하여 h1태그에 클래스를 호출하였고, 원하는 텍스트를 삽입하였다. id값 등을 넣을 수도 있다.-->
         </template>
         
         <style>
@@ -26,5 +26,6 @@
             color: red;
         }
         </style>
+        <!--titleClass라는 속성의 값인 'title'을 셀렉터로 활용하여 원하는 부분에 스타일을 지정해주었다.-->
 </body>
 </html>
